@@ -17,6 +17,9 @@ def recursive(tmp): # ---------
 
     return front + mid + back
 
+result = []
 for i in data:
     tmp = 3 ** i * "-"
-    print(recursive(tmp))
+    result.append(recursive(tmp))
+
+sys.stdout.write("\n".join(result) + "\n")
