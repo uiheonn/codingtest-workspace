@@ -31,4 +31,6 @@ def hanoi(fr, to, num): # from에서 to까지
 print(2 ** inp - 1)
 hanoi(1, 3, inp)
 
+print(result)
+
 sys.stdout.write("\n".join(result) + "\n")
