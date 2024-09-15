@@ -2,6 +2,7 @@ import sys
 input = sys.stdin.read
 output = sys.stdout.write
 
+
 def backTracking(n, row, cols, diag1, diag2):
     global total
     if row == n:
