@@ -16,7 +16,6 @@ def notFromOrTo(fr, to):
     for num in les:
         if num != fr and num != to:
             return num
-    
 
 def hanoi(fr, to, num): # from에서 to까지
     frto = str(fr) + " " + str(to)
