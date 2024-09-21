@@ -58,7 +58,6 @@ def backtracking(idx):
     
     return False
 
-
 # 백트래킹 시작
 backtracking(0)
 
