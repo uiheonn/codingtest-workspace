@@ -1,3 +1,8 @@
+# 알고리즘 요약
+# 0. 큐(0)이면 값이 변경, 스택이면(1) 그대로 빠져나감
+# 1. 끝부터 0인 원소를 뺀다
+# 2. 0인 개수가 M보다 작으면 M - 0의 개수 만큼 수열도 빼서 합친다
+
 from collections import deque
 
 queueStackSize = int(input())
@@ -23,8 +28,3 @@ if len(dq) < newDataSize:
         dq.append(newData[i])
 
 print(' '.join(dq))
-
-# 알고리즘 요약
-# 0. 큐(0)이면 값이 변경, 스택이면(1) 그대로 빠져나감
-# 1. 끝부터 0인 원소를 뺀다
-# 2. 0인 개수가 M보다 작으면 M - 0의 개수 만큼 수열도 빼서 합친다
