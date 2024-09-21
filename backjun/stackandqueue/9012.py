@@ -17,4 +17,5 @@ for i in range(total):
     else:
         result.append("NO")
 
+
 print("\n".join(result))
