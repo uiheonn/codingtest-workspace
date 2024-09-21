@@ -9,3 +9,4 @@ nPr = list(itertools.product(temp, repeat=inp[1]))
 
 for ele in nPr:
     sys.stdout.write(" ".join(map(str, ele)) + "\n")
+    
