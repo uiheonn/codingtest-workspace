@@ -1,3 +1,11 @@
+# 조합 공식 nCm의 경우
+# n!
+# /
+# m! (n-m)!
+
+# 1. 순열 알고리즘을 구현한다
+# 2. 조합 공식을 적용한다
+
 total = int(input())
 result = []
 
@@ -18,12 +26,3 @@ for i in range(total):
     result.append(int(res))
     
 print("\n".join(map(str, result)))
-
-# 조합 공식 nCm의 경우
-# n!
-# /
-# m! (n-m)!
-
-# 1. 순열 알고리즘을 구현한다
-# 2. 조합 공식을 적용한다
-
