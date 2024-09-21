@@ -9,3 +9,4 @@ nPr = list(itertools.permutations(temp, inp[1]))
 
 for ele in nPr:
     sys.stdout.write(" ".join(map(str, ele)) + "\n")
+    
