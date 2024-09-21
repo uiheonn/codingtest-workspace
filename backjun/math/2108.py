@@ -10,7 +10,6 @@ def average(sort):
     tmp = 0
     for i in  range(len(sort)):
         tmp+=sort[i]
-    
     return int(round(tmp/len(sort), 0))
 
 def moreable(sort):
