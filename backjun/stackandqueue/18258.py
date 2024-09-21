@@ -4,6 +4,7 @@ from collections import deque
 input = sys.stdin.read
 data = input().splitlines()
 
+
 total = int(data[0])
 dq = deque()
 result = []
