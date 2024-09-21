@@ -3,7 +3,6 @@ from collections import defaultdict
 
 input = sys.stdin.read
 data = input().splitlines()
-
 n, m = map(int, data[0].split())
 
 dic = defaultdict(int)
