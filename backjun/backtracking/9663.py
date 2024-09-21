@@ -26,4 +26,5 @@ for col in range(0, n): # col열에 퀸을 놓을 차례
     queenList = [[0, col]] # 0항 col열에 퀸을 놓을 상태로 백트래킹 시작
     backTracking(queenList, n, 1) # 경우의 수를 리턴
 
+
 print(total)
