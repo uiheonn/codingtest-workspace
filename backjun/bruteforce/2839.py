@@ -16,4 +16,3 @@ if n!=0:
     tmp=-1
     
 print(tmp)
-    
