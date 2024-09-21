@@ -14,7 +14,6 @@ def recursive(tmp): # ---------
         back = recursive(back) # ---
     else:
         return tmp
-
     return front + mid + back
 
 result = []
