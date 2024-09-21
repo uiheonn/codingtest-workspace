@@ -20,4 +20,5 @@ def fibonacci(n):
 
 data = fibonacci(inp)
 
+
 output(f"{data} {fibonacciNum}\n")
