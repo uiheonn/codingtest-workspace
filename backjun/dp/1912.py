@@ -6,15 +6,12 @@ total = list(map(int, input().split()))
 # 2. sum(list[start:now-1])이 0보다 start = now가 된다
 # 3. 합을 항상 계산하며 max를 리턴
 
-# -1 1 10 2 -> -1이 없는 1 10 2로 만들어야 함
-
 start = 0
 max = -1001
 totalSum = 0
 for i in range(n):
-    #s = sum(total[start:i]) # 33
     totalSum+=total[i]
-    if totalSum < total[i]: # -1 < -2, -1 < 1
+    if totalSum < total[i]:
         totalSum = total[i]
     if totalSum > max:
         max = totalSum
