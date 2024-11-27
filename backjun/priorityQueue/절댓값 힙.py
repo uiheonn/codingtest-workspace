@@ -8,6 +8,7 @@ output = sys.stdout.write
 #     d = int(input())
 #     lst.append(d)
 
+
 input = sys.stdin.read
 data = input().splitlines()
 n = int(data[0])
