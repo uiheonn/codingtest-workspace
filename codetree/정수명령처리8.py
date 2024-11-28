@@ -28,6 +28,8 @@ for i in range(0, a, 1):
 a = list[0]
 b = list[1]
 
+
+
 while a != b:
     if a < b:
         a *= 2
