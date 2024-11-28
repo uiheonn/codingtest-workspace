@@ -23,3 +23,15 @@ for i in range(0, a, 1):
         print(list[0])
     else:
         print(list[-1])
+
+        list = input().split()
+a = list[0]
+b = list[1]
+
+while a != b:
+    if a < b:
+        a *= 2
+    elif a > b:
+        b *= 2
+
+print(a)
