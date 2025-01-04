@@ -1,5 +1,9 @@
 import sys
 
+# 1. 딕셔너리를 생성하여 배열에 넣는다. 알파벳이 key이고 value는 존재횟수로 설정한다. 초기값은 0
+# 2. 이전 딕셔너리의 데이터와 현재 문자열의 알파벳을 +1한 값을 합쳐 새로운 딕셔너리를 생성하여 배열에 추가
+# 3. r의 딕셔너리 value - l의 딕셔너리 value -> l과 r 사이의 알파벳의 개수가 됨
+
 # txt = input()
 # n = int(input())
 # lst = []
@@ -42,5 +46,4 @@ for i in range(n):
     else:
         result.append(alphaLst[r][a] - alphaLst[l-1][a])
 
-# print("recode : ", recode)
 sys.stdout.write("\n".join(map(str, result)))
