@@ -19,15 +19,6 @@ for i in range(m):
 for ele in graphLst:
     ele.sort()
 
-# input = sys.stdin.read
-# data = input().splitlines()
-# n,m,r = map(int, data[0].split())
-# graph = [[0 for _ in range(n)] for _ in range(n)]
-# for i in range(1,m+1):
-#     a,b = map(int, data[i].split())
-#     graph[a-1][b-1] = 1
-#     graph[b-1][a-1] = 1
-
 visited = [0] * (n) # 정점을 방문했는지 확인하는 배열
 count = 1
 
