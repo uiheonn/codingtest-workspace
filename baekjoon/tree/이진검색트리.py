@@ -1,8 +1,7 @@
 import sys
 
-sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
-
+sys.setrecursionlimit(int(1e9))
 lst = []
 while True:
     try:
@@ -15,34 +14,29 @@ class Node:
         self.value = value
         self.left = None
         self.right = None
-
-def build_bst(preorder):
-    if not preorder:
-        return None
-
-    root = Node(preorder[0])
-    stack = [root]
-
-    for value in preorder[1:]:
-        node = Node(value)
-        if value < stack[-1].value:  # 왼쪽 자식
-            stack[-1].left = node
-        else:  # 오른쪽 자식
+    
+def change_original(lst):
+    node = Node(lst[0])
+    stack = [node]
+    for nd in lst[1:]:
+        tmp = Node(nd)
+        if nd < stack[-1].value:
+            stack[-1].left = tmp
+        else:
             parent = None
-            while stack and stack[-1].value < value:
+            while stack and stack[-1].value < nd:
                 parent = stack.pop()
-            parent.right = node
-        stack.append(node)
-
-    return root
+            parent.right = tmp
+        stack.append(tmp)
+    return node
 
 def postorder(node):
-    if not node:
+    if node == None:
         return
-    postorder(node.left)
-    postorder(node.right)
-    print(node.value)
+    v,l,r = node.value, node.left, node.right
+    postorder(l)
+    postorder(r)
+    print(v)
 
-# BST 구성 및 후위 순회 실행
-root = build_bst(lst)
-postorder(root)
+temp = change_original(lst)
+postorder(temp)
