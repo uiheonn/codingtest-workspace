@@ -1,9 +1,7 @@
-import collections
 import sys
 
 input = sys.stdin.readline
 V,E = map(int, input().split())
-dic = collections.defaultdict(tuple)
 graph_lst = []
 
 for _ in range(E):
@@ -13,41 +11,33 @@ for _ in range(E):
 graph_lst.sort(key = lambda x:x[2])
 selected = [-1 for _ in range(V+1)]
 
+def find_root(vertax):
+    while selected[vertax] != -1:
+        vertax = selected[vertax]
+    return vertax
+
 def check_cycle(v1,v2): # v1,v2를 연결함으로서 사이클이 생성되는지 확인
-    if v1 == -1 and v2 == -1:
-        if v1 < v2:
-            selected[v2] = v1
+    v1_root = find_root(v1)
+    v2_root = find_root(v2)
+    if v1_root != v2_root: # 싸이클이 아니다
+        if v1_root > v2_root:
+            selected[v1_root] = v2_root
         else:
-            selected[v1] = v2
+            selected[v2_root] = v1_root
         return True
-    v1_copy = v1
-    while selected[v1_copy] != -1:
-        v1_copy = selected[v1_copy]
-    v2_copy = v2
-    while selected[v2_copy] != -1:
-        v2_copy = selected[v2_copy]
-    if v1_copy == v2_copy: # 같은 부모라면 사이클
-        return False
     else:
-        if v1 < v2:
-            selected[v2] = v1
-        else:
-            selected[v1] = v2
-        return True
+        return False
 
 result = 0
-count = set()
+count = 0
 for node in graph_lst:
-    if len(count) == V:
+    if count == V-1:
         break
     v1,v2,cost = node
     if check_cycle(v1,v2):
-        print("정점", v1, "과 정점", v2,"가 연결되었습니다!")
-        print("selected : ", selected)
+        # print("정점", v1, "과 정점", v2,"가 연결되었습니다!")
+        # print("selected : ", selected)
         result+=cost
-        count.add(v1)
-        count.add(v2)
+        count+=1
 
 print(result)
-
-
