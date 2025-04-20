@@ -20,7 +20,7 @@ def check_cycle(v1,v2): # v1,v2를 연결함으로서 사이클이 생성되는�
     v1_root = find_root(v1)
     v2_root = find_root(v2)
     if v1_root != v2_root: # 싸이클이 아니다
-        if v1_root > v2_root:
+        if v1_root > v2_root: # 상위 노드 선택 기준을 설정해야 효율성 개선됨
             selected[v1_root] = v2_root
         else:
             selected[v2_root] = v1_root
