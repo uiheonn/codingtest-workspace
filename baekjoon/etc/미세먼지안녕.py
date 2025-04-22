@@ -10,10 +10,6 @@ for i in range(r):
     if tmp[0] == -1:
         cleaner.append([i,0])
 
-# for ele in lst:
-#     print(ele)
-# print("cleaner : ", cleaner)
-
 dx = [0,1,0,-1]
 dy = [-1,0,1,0]
 for q in range(1,t+1): # 시간 측정
@@ -37,15 +33,10 @@ for q in range(1,t+1): # 시간 측정
         ii,jj,sp = ele
         lst[ii][jj] += sp
 
-    # print(q, "초일 때 방의 상황 환풍 전")
-    # for ele in lst:
-    #     print(ele)
-
     ct_row, ct_col = cleaner[0]
     ct_col+=1
     tmp = lst[ct_row][ct_col]
     lst[ct_row][ct_col] = 0
-    # print("tmp : ", tmp)
     for i in range(1, c-1): # 1. 우측 이동
         res = lst[ct_row][i+1] # 우측 미세먼지 임시 저장
         lst[ct_row][i+1] = tmp
@@ -85,10 +76,6 @@ for q in range(1,t+1): # 시간 측정
         lst[i-1][0] = tmp
         tmp = res
     lst[cb_row][0] = -1
-
-    #print(q, "초일 때 방의 상황 환풍 후")
-    # for ele in lst:
-    #     print(ele)
     
     semi.clear()
     data.clear()
